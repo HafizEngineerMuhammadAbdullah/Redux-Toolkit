@@ -1,9 +1,12 @@
 import React from 'react'
 
+// Provide the Redux Store to React
 const App = () => {
   return (
     <div>
-      App
+      <h1>0</h1>
+      <button>Increment</button>
+      <button>Decrement</button>
     </div>
   )
 }
