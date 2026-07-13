@@ -1,9 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment } from './redux/features/counterSlice';
+import { decrement, increment, increaseByAmount } from './redux/features/counterSlice';
 
 // Provide the Redux Store to React
 const App = () => {
+  const [num, setNum] = React.useState(5);
+
   const count = useSelector((state) => state.counter.value)
   const dispatch = useDispatch();
   return (
@@ -12,9 +14,21 @@ const App = () => {
       <button onClick={() => {
         dispatch(increment())
       }}>Increment</button>
+
       <button onClick={() => {
         dispatch(decrement())
       }}>Decrement</button>
+
+      <button onClick={() => {
+        dispatch(increaseByAmount(Number(num)))
+      }}>
+        Increment by {num}
+      </button>
+
+
+      <input type="number"
+        value={num}
+        onChange={(e) => setNum(e.target.value)} />
     </div>
   )
 }
