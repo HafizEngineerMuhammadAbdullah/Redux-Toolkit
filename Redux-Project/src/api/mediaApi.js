@@ -47,10 +47,10 @@ async function fetchPexelsVideos(query, page = 1, perPage = 10) {
             perPage
         },
         headers: {
-            Authorization: `Client-ID ${UNSPLASH_KEY}`,
+            Authorization: PEXELS_KEY,
         },
     });
     return response.data;
 }
 
-export { fetchUnsplashImages, fetchPexelsImages };
+export { fetchUnsplashImages, fetchPexelsVideos };
